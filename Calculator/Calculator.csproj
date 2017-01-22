@@ -61,10 +61,10 @@
     <Error Condition="!Exists('..\packages\MSBuildTasks.1.5.0.214\build\MSBuildTasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildTasks.1.5.0.214\build\MSBuildTasks.targets'))" />
   </Target>
   <Target Name="AfterBuild">
-  <CreateItem Include="$(SolutionDir)\Calculator\bin\Debug\*.*" >
+  <CreateItem Include="$(SolutionDir)\Calculator\bin\Release\*.*" >
       <Output ItemName="ZipFiles" TaskParameter="Include"/>
   </CreateItem>
-  <Zip ZipFileName="$(SolutionDir)\Calculator.zip" WorkingDirectory="$(SolutionDir)\Calculator\bin\Debug\" Files="@(ZipFiles)" />
+  <Zip ZipFileName="$(SolutionDir)\Calculator.$(BUILD_NUMBER).zip" WorkingDirectory="$(SolutionDir)\Calculator\bin\Release\" Files="@(ZipFiles)" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
