@@ -13,7 +13,7 @@ node {
     } else if (fileExists("${WORKSPACE}/build.xml")) {
         sh "echo ###-------ANT BUILD-------###"
         Ant()
-    } else if (fileExists("${WORKSPACE}/*.sln")) {
+    } else if (fileExists("${WORKSPACE}/Calculator.sln")) {
         sh "echo ###-------MSBUILD------###"
         Msbuild()
     } else if (fileExists("${WORKSPACE}/test4.txt")) {
