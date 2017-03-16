@@ -173,9 +173,9 @@ def AntBuild() {
 def MsBuild() {
 
         try {
-        bat "sleep 15"
+        sh "sleep 15"
     } catch (Exception e) {
-        sh "echo Ant Build Failed"
+        sh "echo MS Build Failed"
     }
 }
 
